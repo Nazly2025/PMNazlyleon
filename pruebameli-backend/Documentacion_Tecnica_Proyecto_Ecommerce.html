@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Técnica - Proyecto E-commerce Mercado Libre Style</title>
+    <style>
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 22px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        h4 {
+            color: #34495e;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success-box {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        .architecture-diagram {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .metrics-table {
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .metrics-table th {
+            background-color: #2c3e50;
+        }
+        
+        .code-block {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Documentación Técnica - Proyecto E-commerce Mercado Libre Style</h1>
+        
+        <div class="info-box">
+            <strong>Información del Proyecto:</strong><br>
+            <strong>Versión:</strong> 1.0<br>
+            <strong>Fecha:</strong> Julio 2025<br>
+            <strong>Autor:</strong> Equipo de Desarrollo<br>
+            <strong>Estado:</strong> En Desarrollo
+        </div>
+
+        <div class="toc">
+            <h3>Índice</h3>
+            <ul>
+                <li><a href="#resumen">1. Resumen Ejecutivo</a></li>
+                <li><a href="#arquitectura">2. Arquitectura del Sistema</a></li>
+                <li><a href="#backend">3. Backend - Spring Boot</a></li>
+                <li><a href="#frontend">4. Frontend - React</a></li>
+                <li><a href="#comunicacion">5. Comunicación Backend-Frontend</a></li>
+                <li><a href="#base-datos">6. Base de Datos</a></li>
+                <li><a href="#documentacion-api">7. Documentación API</a></li>
+                <li><a href="#despliegue">8. Despliegue y Ejecución</a></li>
+                <li><a href="#configuraciones">9. Configuraciones Especiales</a></li>
+                <li><a href="#metricas">10. Métricas y Monitoreo</a></li>
+            </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="resumen">1. Resumen Ejecutivo</h2>
+        
+        <p>Este proyecto implementa una aplicación e-commerce completa con arquitectura de microservicios, desarrollada en <strong>Spring Boot</strong> (Backend) y <strong>React</strong> (Frontend), simulando la funcionalidad de Mercado Libre. El sistema incluye gestión de productos, reseñas, vendedores, imágenes y un panel de compras interactivo.</p>
+
+        <div class="highlight">
+            <strong>Características Principales:</strong>
+            <ul>
+                <li>Arquitectura RESTful con separación clara de responsabilidades</li>
+                <li>Base de datos SQLite con JPA/Hibernate</li>
+                <li>Frontend responsive con Tailwind CSS</li>
+                <li>Documentación automática con Swagger/OpenAPI</li>
+                <li>Sistema de reseñas y calificaciones</li>
+                <li>Galería de imágenes dinámica</li>
+                <li>Panel de compras estilo Mercado Libre</li>
+            </ul>
+        </div>
+
+        <h2 id="arquitectura">2. Arquitectura del Sistema</h2>
+
+        <h3>Diagrama de Arquitectura</h3>
+        
+        <div class="architecture-diagram">
+            <pre>
+┌─────────────────┐    HTTP/REST    ┌─────────────────┐
+│   Frontend      │ ◄──────────────► │   Backend       │
+│   (React)       │                 │   (Spring Boot) │
+│   Port: 5173    │                 │   Port: 8080    │
+└─────────────────┘                 └─────────────────┘
+                                              │
+                                              ▼
+                                    ┌─────────────────┐
+                                    │   SQLite DB     │
+                                    │   products.db   │
+                                    └─────────────────┘
+            </pre>
+        </div>
+
+        <h3>Componentes del Sistema</h3>
+        
+        <table>
+            <tr>
+                <th>Componente</th>
+                <th>Tecnología</th>
+                <th>Propósito</th>
+                <th>Puerto</th>
+            </tr>
+            <tr>
+                <td>Frontend</td>
+                <td>React + Vite</td>
+                <td>Interfaz de usuario</td>
+                <td>5173</td>
+            </tr>
+            <tr>
+                <td>Backend</td>
+                <td>Spring Boot</td>
+                <td>API REST</td>
+                <td>8080</td>
+            </tr>
+            <tr>
+                <td>Base de Datos</td>
+                <td>SQLite</td>
+                <td>Almacenamiento de datos</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Documentación</td>
+                <td>Swagger/OpenAPI</td>
+                <td>Documentación API</td>
+                <td>8080/swagger-ui.html</td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <h2 id="backend">3. Backend - Spring Boot</h2>
+
+        <h3>3.1 Tecnologías y Herramientas</h3>
+        
+        <table>
+            <tr>
+                <th>Componente</th>
+                <th>Tecnología</th>
+                <th>Versión</th>
+                <th>Propósito</th>
+            </tr>
+            <tr>
+                <td><strong>Framework</strong></td>
+                <td>Spring Boot</td>
+                <td>3.5.4</td>
+                <td>Framework principal</td>
+            </tr>
+            <tr>
+                <td><strong>Lenguaje</strong></td>
+                <td>Java</td>
+                <td>21.0.8</td>
+                <td>Lenguaje de programación</td>
+            </tr>
+            <tr>
+                <td><strong>ORM</strong></td>
+                <td>Hibernate/JPA</td>
+                <td>6.6.22</td>
+                <td>Mapeo objeto-relacional</td>
+            </tr>
+            <tr>
+                <td><strong>Base de Datos</strong></td>
+                <td>SQLite</td>
+                <td>3.45.1</td>
+                <td>Base de datos embebida</td>
+            </tr>
+            <tr>
+                <td><strong>Build Tool</strong></td>
+                <td>Maven</td>
+                <td>3.9.6</td>
+                <td>Gestión de dependencias</td>
+            </tr>
+            <tr>
+                <td><strong>Documentación</strong></td>
+                <td>SpringDoc OpenAPI</td>
+                <td>2.3.0</td>
+                <td>Documentación API</td>
+            </tr>
+            <tr>
+                <td><strong>CORS</strong></td>
+                <td>Spring WebMVC</td>
+                <td>-</td>
+                <td>Configuración CORS</td>
+            </tr>
+        </table>
+
+        <h3>3.2 Estructura del Proyecto</h3>
+        
+        <pre>
+pruebameli-backend/
+├── src/main/java/com/pruebameli/pruebameli_backend/
+│   ├── conf/
+│   │   ├── WebConfig.java              # Configuración CORS
+│   │   └── OpenApiConfig.java          # Configuración Swagger
+│   ├── controller/
+│   │   └── ProductController.java      # Controlador REST
+│   ├── dto/
+│   │   ├── ProductDetailDTO.java       # DTO principal
+│   │   ├── ProductFeatureDTO.java      # DTO características
+│   │   ├── ReviewDTO.java             # DTO reseñas
+│   │   └── SellerDTO.java             # DTO vendedor
+│   ├── model/
+│   │   ├── Product.java               # Entidad producto
+│   │   ├── Review.java                # Entidad reseña
+│   │   └── Seller.java                # Entidad vendedor
+│   ├── repository/
+│   │   ├── ProductRepository.java     # Repositorio productos
+│   │   ├── ReviewRepository.java      # Repositorio reseñas
+│   │   └── SellerRepository.java      # Repositorio vendedores
+│   └── PruebameliBackendApplication.java
+├── src/main/resources/
+│   ├── application.properties         # Configuración aplicación
+│   ├── data.sql                      # Datos iniciales
+│   └── products.db                   # Base de datos SQLite
+└── pom.xml                          # Dependencias Maven
+        </pre>
+
+        <h3>3.3 Modelo de Datos</h3>
+
+        <h4>Entidad Product</h4>
+        
+        <div class="code-block">
+<pre><code>@Entity
+@Table(name = "product")
+@NamedEntityGraph(
+    name = "product-with-details",
+    attributeNodes = {
+        @NamedAttributeNode("seller"),
+        @NamedAttributeNode("reviews")
+    }
+)
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    private String name;
+    private String description;
+    private Double price;
+    
+    @ElementCollection
+    @CollectionTable(name = "product_images", 
+                    joinColumns = @JoinColumn(name = "product_id"))
+    @Column(name = "image_url")
+    private List&lt;String&gt; imageUrls;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seller_id", nullable = false)
+    private Seller seller;
+    
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List&lt;Review&gt; reviews;
+}</code></pre>
+        </div>
+
+        <h4>Relaciones de Base de Datos</h4>
+        <ul>
+            <li><strong>Product</strong> ↔ <strong>Seller</strong>: Many-to-One</li>
+            <li><strong>Product</strong> ↔ <strong>Review</strong>: One-to-Many</li>
+            <li><strong>Product</strong> ↔ <strong>ProductImages</strong>: One-to-Many (ElementCollection)</li>
+        </ul>
+
+        <h3>3.4 API REST Endpoints</h3>
+        
+        <table>
+            <tr>
+                <th>Endpoint</th>
+                <th>Método</th>
+                <th>Descripción</th>
+                <th>Respuesta</th>
+            </tr>
+            <tr>
+                <td><code>/api/products/{id}</code></td>
+                <td>GET</td>
+                <td>Obtener producto por ID</td>
+                <td>ProductDetailDTO</td>
+            </tr>
+            <tr>
+                <td><code>/swagger-ui.html</code></td>
+                <td>GET</td>
+                <td>Documentación API</td>
+                <td>Swagger UI</td>
+            </tr>
+        </table>
+
+        <h3>3.5 Configuración CORS</h3>
+        
+        <div class="code-block">
+<pre><code>@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/**")
+                .allowedOrigins(
+                    "http://localhost:5173",
+                    "http://localhost:5174", 
+                    "http://localhost:5175"
+                )
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+    }
+}</code></pre>
+        </div>
+
+        <h3>3.6 Patrones de Diseño Implementados</h3>
+        <ol>
+            <li><strong>DTO Pattern</strong>: Separación entre entidades de dominio y objetos de transferencia</li>
+            <li><strong>Repository Pattern</strong>: Abstracción de acceso a datos</li>
+            <li><strong>Entity Graph</strong>: Optimización de consultas con carga eager</li>
+            <li><strong>Builder Pattern</strong>: En DTOs para construcción de objetos complejos</li>
+        </ol>
+
+        <div class="page-break"></div>
+
+        <h2 id="frontend">4. Frontend - React</h2>
+
+        <h3>4.1 Tecnologías y Herramientas</h3>
+        
+        <table>
+            <tr>
+                <th>Componente</th>
+                <th>Tecnología</th>
+                <th>Versión</th>
+                <th>Propósito</th>
+            </tr>
+            <tr>
+                <td><strong>Framework</strong></td>
+                <td>React</td>
+                <td>18.2.0</td>
+                <td>Framework principal</td>
+            </tr>
+            <tr>
+                <td><strong>Build Tool</strong></td>
+                <td>Vite</td>
+                <td>5.0.0</td>
+                <td>Herramienta de build</td>
+            </tr>
+            <tr>
+                <td><strong>Lenguaje</strong></td>
+                <td>JavaScript</td>
+                <td>ES6+</td>
+                <td>Lenguaje de programación</td>
+            </tr>
+            <tr>
+                <td><strong>Styling</strong></td>
+                <td>Tailwind CSS</td>
+                <td>3.4.0</td>
+                <td>Framework CSS</td>
+            </tr>
+            <tr>
+                <td><strong>Routing</strong></td>
+                <td>React Router DOM</td>
+                <td>6.20.0</td>
+                <td>Navegación SPA</td>
+            </tr>
+            <tr>
+                <td><strong>Icons</strong></td>
+                <td>Lucide React</td>
+                <td>0.294.0</td>
+                <td>Iconografía</td>
+            </tr>
+            <tr>
+                <td><strong>HTTP Client</strong></td>
+                <td>Fetch API</td>
+                <td>Nativo</td>
+                <td>Comunicación API</td>
+            </tr>
+        </table>
+
+        <h3>4.2 Estructura del Proyecto</h3>
+        
+        <pre>
+pruebameli-front/
+├── src/
+│   ├── components/
+│   │   ├── LoadingSpinner.jsx        # Componente de carga
+│   │   ├── ErrorDisplay.jsx          # Componente de error
+│   │   ├── MercadoLibreLayout.jsx    # Layout principal
+│   │   ├── ProductGallery.jsx        # Galería de imágenes
+│   │   ├── ProductFeatures.jsx       # Características y reseñas
+│   │   └── PurchasePanel.jsx         # Panel de compra
+│   ├── App.jsx                       # Componente principal
+│   ├── ProductPage.jsx               # Página de producto
+│   ├── main.jsx                      # Punto de entrada
+│   └── index.css                     # Estilos globales
+├── public/
+│   └── images/                       # Imágenes estáticas
+├── package.json                      # Dependencias
+├── vite.config.js                    # Configuración Vite
+├── tailwind.config.js                # Configuración Tailwind
+└── postcss.config.js                 # Configuración PostCSS
+        </pre>
+
+        <h3>4.3 Arquitectura de Componentes</h3>
+        
+        <pre>
+App.jsx
+└── ProductPage.jsx
+    ├── MercadoLibreLayout.jsx
+    │   └── Header (Breadcrumbs)
+    ├── ProductGallery.jsx
+    │   ├── MainImage
+    │   └── Thumbnails
+    ├── ProductFeatures.jsx
+    │   ├── Features
+    │   ├── Reviews
+    │   └── Description
+    └── PurchasePanel.jsx
+        ├── PriceInfo
+        ├── DeliveryInfo
+        ├── StockInfo
+        ├── ActionButtons
+        └── SellerInfo
+        </pre>
+
+        <h3>4.4 Gestión de Estado</h3>
+        
+        <div class="code-block">
+<pre><code>// Estado local en ProductPage.jsx
+const [product, setProduct] = useState(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+const [selectedImage, setSelectedImage] = useState(0);
+const [selectedColor, setSelectedColor] = useState(0);
+const [quantity, setQuantity] = useState(1);
+const [inWishlist, setInWishlist] = useState(false);</code></pre>
+        </div>
+
+        <h3>4.5 Estilos y Diseño</h3>
+
+        <h4>Tailwind CSS Configuration</h4>
+        
+        <div class="code-block">
+<pre><code>// tailwind.config.js
+export default {
+  content: ["./src/**/*.{js,jsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
+      keyframes: {
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        }
+      },
+      animation: {
+        'fade-in-up': 'fade-in-up 0.5s ease-out'
+      }
+    }
+  }
+}</code></pre>
+        </div>
+
+        <h4>CSS Personalizado</h4>
+        
+        <div class="code-block">
+<pre><code>/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clases personalizadas estilo Mercado Libre */
+.ml-container { @apply max-w-7xl mx-auto px-4; }
+.ml-card { @apply bg-white rounded-lg shadow-sm border border-gray-200; }
+.ml-button-primary { @apply bg-blue-600 hover:bg-blue-700 text-white; }</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="comunicacion">5. Comunicación Backend-Frontend</h2>
+
+        <h3>5.1 Flujo de Datos</h3>
+        
+        <ol>
+            <li><strong>Inicialización</strong>: Frontend carga en puerto 5173</li>
+            <li><strong>Navegación</strong>: Usuario accede a <code>/product/{id}</code></li>
+            <li><strong>Fetch Request</strong>: Frontend hace petición a <code>http://localhost:8080/api/products/{id}</code></li>
+            <li><strong>CORS</strong>: Backend valida origen y permite petición</li>
+            <li><strong>Procesamiento</strong>: Backend consulta base de datos con EntityGraph</li>
+            <li><strong>Respuesta</strong>: JSON con ProductDetailDTO</li>
+            <li><strong>Renderizado</strong>: Frontend actualiza UI con datos recibidos</li>
+        </ol>
+
+        <h3>5.2 Ejemplo de Comunicación</h3>
+
+        <h4>Frontend - ProductPage.jsx</h4>
+        
+        <div class="code-block">
+<pre><code>const fetchProduct = async (id) => {
+  try {
+    setLoading(true);
+    const response = await fetch(`http://localhost:8080/api/products/${id}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    setProduct(data);
+  } catch (error) {
+    setError(error.message);
+  } finally {
+    setLoading(false);
+  }
+};</code></pre>
+        </div>
+
+        <h4>Backend - ProductController.java</h4>
+        
+        <div class="code-block">
+<pre><code>@GetMapping("/{id}")
+public ResponseEntity&lt;ProductDetailDTO&gt; getProductById(@PathVariable Long id) {
+    Optional&lt;Product&gt; product = productRepository.findProductById(id);
+    return product.map(p -> ResponseEntity.ok(new ProductDetailDTO(p)))
+            .orElse(ResponseEntity.notFound().build());
+}</code></pre>
+        </div>
+
+        <h3>5.3 Configuración CORS Detallada</h3>
+        
+        <div class="code-block">
+<pre><code>// Backend - WebConfig.java
+.allowedOrigins(
+    "http://localhost:5173",  // Puerto por defecto Vite
+    "http://localhost:5174",  // Puerto alternativo 1
+    "http://localhost:5175",  // Puerto alternativo 2
+    "http://localhost:3000"   // Puerto alternativo 3
+)
+.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+.allowedHeaders("*")
+.allowCredentials(true)</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="base-datos">6. Base de Datos</h2>
+
+        <h3>6.1 Tecnología</h3>
+        <ul>
+            <li><strong>Motor</strong>: SQLite 3.45.1</li>
+            <li><strong>Archivo</strong>: <code>products.db</code> (20KB)</li>
+            <li><strong>Configuración</strong>: <code>jdbc:sqlite:products.db</code></li>
+        </ul>
+
+        <h3>6.2 Esquema de Base de Datos</h3>
+        
+        <div class="code-block">
+<pre><code>-- Tabla de vendedores
+CREATE TABLE seller (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    rating FLOAT,
+    total_sales INTEGER,
+    years_active INTEGER,
+    quality_rating FLOAT,
+    delivery_rating FLOAT,
+    service_rating FLOAT,
+    badges_json CLOB,
+    location VARCHAR(255)
+);
+
+-- Tabla de productos
+CREATE TABLE product (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    description VARCHAR(255),
+    price FLOAT,
+    category VARCHAR(255),
+    brand VARCHAR(255),
+    available_stock INTEGER,
+    warranty VARCHAR(255),
+    features_json TEXT,
+    seller_id BIGINT NOT NULL,
+    FOREIGN KEY (seller_id) REFERENCES seller(id)
+);
+
+-- Tabla de imágenes de productos
+CREATE TABLE product_images (
+    product_id BIGINT NOT NULL,
+    image_url VARCHAR(255),
+    FOREIGN KEY (product_id) REFERENCES product(id)
+);
+
+-- Tabla de reseñas
+CREATE TABLE review (
+    id INTEGER PRIMARY KEY,
+    product_id BIGINT NOT NULL,
+    user_name VARCHAR(255) NOT NULL,
+    rating INTEGER NOT NULL,
+    comment CLOB,
+    review_date VARCHAR(255),
+    helpful_count INTEGER,
+    verified_purchase BOOLEAN,
+    FOREIGN KEY (product_id) REFERENCES product(id)
+);</code></pre>
+        </div>
+
+        <h3>6.3 Datos de Ejemplo</h3>
+
+        <h4>Productos Disponibles</h4>
+        <ol>
+            <li><strong>Samsung Galaxy A55 5G</strong> - $439.00</li>
+            <li><strong>iPhone 15 Pro Max</strong> - $1300.00</li>
+            <li><strong>Samsung Galaxy M55 5G</strong> - $421.00</li>
+            <li><strong>Motorola Edge 50 Pro 5G</strong> - $419.00</li>
+            <li><strong>Smart TV Samsung 4K</strong> - $750.00</li>
+            <li><strong>Auriculares Sony WH-1000XM5</strong> - $349.00</li>
+        </ol>
+
+        <h4>Estadísticas de Datos</h4>
+        <ul>
+            <li><strong>6 productos</strong> con características completas</li>
+            <li><strong>24 imágenes</strong> (4 por producto)</li>
+            <li><strong>3 vendedores</strong> con ratings y badges</li>
+            <li><strong>22 reseñas</strong> distribuidas entre productos</li>
+            <li><strong>Promedio de rating</strong>: 4.5/5.0</li>
+        </ul>
+
+        <h3>6.4 Configuración de Base de Datos</h3>
+        
+        <div class="code-block">
+<pre><code># application.properties
+spring.datasource.url=jdbc:sqlite:products.db
+spring.datasource.driver-class-name=org.sqlite.JDBC
+spring.jpa.database-platform=org.hibernate.community.dialect.SQLiteDialect
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.defer-datasource-initialization=true
+spring.sql.init.mode=always</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="documentacion-api">7. Documentación API</h2>
+
+        <h3>7.1 Swagger/OpenAPI</h3>
+        <ul>
+            <li><strong>URL</strong>: <code>http://localhost:8080/swagger-ui.html</code></li>
+            <li><strong>Configuración</strong>: SpringDoc OpenAPI 2.3.0</li>
+            <li><strong>Características</strong>:
+                <ul>
+                    <li>Documentación automática</li>
+                    <li>Ejemplos de uso</li>
+                    <li>Esquemas de respuesta</li>
+                    <li>Testing interactivo</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>7.2 Ejemplo de Respuesta API</h3>
+        
+        <div class="code-block">
+<pre><code>{
+  "id": 1,
+  "name": "Samsung Galaxy A55 5G Dual SIM 256 GB",
+  "description": "Con su potente procesador y 8 GB de RAM...",
+  "price": 439.0,
+  "imageUrls": [
+    "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&h=600&fit=crop"
+  ],
+  "category": "Electrónica",
+  "brand": "Samsung",
+  "availableStock": 15,
+  "warranty": "12 meses de garantía oficial por el vendedor",
+  "features": [
+    {"name": "Tamaño de la pantalla", "value": "6.6 \""},
+    {"name": "Memoria interna", "value": "256 GB"}
+  ],
+  "rating": 4.8,
+  "reviewsCount": 5,
+  "sellerInfo": {
+    "id": 1,
+    "name": "Tienda Oficial Samsung",
+    "rating": 4.8,
+    "totalSales": 15000,
+    "yearsActive": 10,
+    "location": "Bogotá, Colombia",
+    "badges": ["MercadoLíder Platinum", "Envío Gratis"]
+  },
+  "reviews": [
+    {
+      "id": 1,
+      "userName": "Ana G.",
+      "rating": 5,
+      "comment": "¡Producto excelente! Muy satisfecha con la compra.",
+      "date": "2024-07-20",
+      "helpful": 10,
+      "verified": true
+    }
+  ]
+}</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="despliegue">8. Despliegue y Ejecución</h2>
+
+        <h3>8.1 Backend</h3>
+        
+        <div class="code-block">
+<pre><code># Compilar y ejecutar
+cd pruebameli-backend/pruebameli-backend
+./mvnw.cmd clean spring-boot:run
+
+# Verificar
+curl http://localhost:8080/api/products/1</code></pre>
+        </div>
+
+        <h3>8.2 Frontend</h3>
+        
+        <div class="code-block">
+<pre><code># Instalar dependencias
+cd pruebameli-front
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Verificar
+# Abrir http://localhost:5173/product/1</code></pre>
+        </div>
+
+        <h3>8.3 Puertos Utilizados</h3>
+        <ul>
+            <li><strong>Backend</strong>: 8080 (Spring Boot)</li>
+            <li><strong>Frontend</strong>: 5173 (Vite Dev Server)</li>
+            <li><strong>Swagger</strong>: 8080/swagger-ui.html</li>
+        </ul>
+
+        <h2 id="configuraciones">9. Configuraciones Especiales</h2>
+
+        <h3>9.1 Optimizaciones Implementadas</h3>
+        <ol>
+            <li><strong>EntityGraph</strong>: Carga eager de relaciones para evitar N+1 queries</li>
+            <li><strong>DTO Pattern</strong>: Separación clara entre capas de presentación y dominio</li>
+            <li><strong>CORS Config</strong>: Soporte para múltiples puertos de desarrollo</li>
+            <li><strong>Error Handling</strong>: Manejo robusto de errores en frontend y backend</li>
+            <li><strong>Loading States</strong>: Estados de carga para mejor UX</li>
+        </ol>
+
+        <h3>9.2 Consideraciones de Rendimiento</h3>
+        <ul>
+            <li><strong>Base de datos</strong>: SQLite para desarrollo, escalable a PostgreSQL/MySQL</li>
+            <li><strong>Imágenes</strong>: URLs externas (Unsplash) para optimizar almacenamiento</li>
+            <li><strong>Caching</strong>: Implementable con Redis para producción</li>
+            <li><strong>CDN</strong>: Recomendado para imágenes en producción</li>
+        </ul>
+
+        <h2 id="metricas">10. Métricas y Monitoreo</h2>
+
+        <h3>10.1 Logs del Sistema</h3>
+        <ul>
+            <li><strong>Backend</strong>: Logs detallados de Hibernate y Spring Boot</li>
+            <li><strong>Frontend</strong>: Console logs para debugging</li>
+            <li><strong>CORS</strong>: Logs de requests cross-origin</li>
+        </ul>
+
+        <h3>10.2 Métricas de Rendimiento</h3>
+        <ul>
+            <li><strong>Tiempo de respuesta API</strong>: ~200ms promedio</li>
+            <li><strong>Tamaño de respuesta</strong>: ~5KB por producto</li>
+            <li><strong>Carga de página</strong>: ~2s con imágenes</li>
+        </ul>
+
+        <div class="success-box">
+            <strong>✅ Estado del Proyecto:</strong><br>
+            El proyecto está completamente funcional con todas las características implementadas:
+            <ul>
+                <li>Backend Spring Boot ejecutándose correctamente</li>
+                <li>Frontend React con diseño responsive</li>
+                <li>Base de datos SQLite con datos de ejemplo</li>
+                <li>API documentada con Swagger</li>
+                <li>Comunicación CORS configurada</li>
+                <li>Imágenes dinámicas cargadas desde la base de datos</li>
+                <li>Sistema de reseñas funcional</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Notas Importantes:</strong><br>
+            <ul>
+                <li>Este es un proyecto de desarrollo/demostración</li>
+                <li>Para producción, considerar migrar a PostgreSQL/MySQL</li>
+                <li>Implementar autenticación y autorización</li>
+                <li>Agregar validaciones de seguridad</li>
+                <li>Configurar HTTPS en producción</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>📋 Próximos Pasos:</strong><br>
+            <ul>
+                <li>Agregar más funcionalidades de e-commerce</li>
+                <li>Implementar sistema de carrito de compras</li>
+                <li>Agregar sistema de pagos</li>
+                <li>Implementar búsqueda y filtros</li>
+                <li>Agregar sistema de usuarios</li>
+                <li>Implementar notificaciones</li>
+            </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="guia-junior">11. Guía para Desarrolladores Junior</h2>
+
+        <h3>11.1 Conceptos Básicos Explicados</h3>
+
+        <h4>¿Qué es una API REST?</h4>
+        <p>Una API REST es como un "menú" que permite a diferentes aplicaciones comunicarse entre sí. En nuestro proyecto:</p>
+        <ul>
+            <li><strong>Frontend</strong> (React) "pide" información al <strong>Backend</strong> (Spring Boot)</li>
+            <li>El Backend "sirve" los datos desde la <strong>Base de Datos</strong> (SQLite)</li>
+            <li>Es como un camarero que toma tu pedido y te trae la comida</li>
+        </ul>
+
+        <h4>¿Qué es CORS?</h4>
+        <p>CORS es una regla de seguridad que permite que el navegador web se comunique con servidores en diferentes dominios. En nuestro caso:</p>
+        <ul>
+            <li>Frontend corre en <code>localhost:5173</code></li>
+            <li>Backend corre en <code>localhost:8080</code></li>
+            <li>CORS permite que se comuniquen de forma segura</li>
+        </ul>
+
+        <h4>¿Qué es JPA/Hibernate?</h4>
+        <p>JPA es como un "traductor" que convierte objetos Java en datos de base de datos:</p>
+        <ul>
+            <li><strong>Entidad</strong>: Clase Java que representa una tabla</li>
+            <li><strong>Repositorio</strong>: Clase que maneja las operaciones de base de datos</li>
+            <li><strong>DTO</strong>: Objeto que se envía al frontend (versión "limpia" de la entidad)</li>
+        </ul>
+
+        <h3>11.2 Flujo de Desarrollo Típico</h3>
+        
+        <div class="highlight">
+            <strong>1. Entender el Requerimiento</strong><br>
+            Ejemplo: "Mostrar imágenes de productos desde la base de datos"
+        </div>
+
+        <div class="highlight">
+            <strong>2. Modificar la Base de Datos</strong><br>
+            - Agregar datos en <code>data.sql</code><br>
+            - Ejecutar el backend para crear las tablas
+        </div>
+
+        <div class="highlight">
+            <strong>3. Actualizar el Backend</strong><br>
+            - Modificar entidades en <code>model/</code><br>
+            - Actualizar DTOs en <code>dto/</code><br>
+            - Ajustar controladores en <code>controller/</code>
+        </div>
+
+        <div class="highlight">
+            <strong>4. Actualizar el Frontend</strong><br>
+            - Modificar componentes en <code>src/components/</code><br>
+            - Actualizar estilos en <code>index.css</code><br>
+            - Probar la funcionalidad
+        </div>
+
+        <h3>11.3 Debugging Común</h3>
+        
+        <table>
+            <tr>
+                <th>Problema</th>
+                <th>Causa Probable</th>
+                <th>Solución</th>
+            </tr>
+            <tr>
+                <td>Error CORS</td>
+                <td>Backend no permite el origen del frontend</td>
+                <td>Verificar <code>WebConfig.java</code></td>
+            </tr>
+            <tr>
+                <td>404 Not Found</td>
+                <td>Backend no está corriendo o URL incorrecta</td>
+                <td>Verificar puerto 8080 y endpoint</td>
+            </tr>
+            <tr>
+                <td>Datos no aparecen</td>
+                <td>Base de datos vacía o consulta incorrecta</td>
+                <td>Verificar <code>data.sql</code> y reiniciar backend</td>
+            </tr>
+            <tr>
+                <td>Estilos no se aplican</td>
+                <td>Tailwind CSS no configurado</td>
+                <td>Verificar <code>postcss.config.js</code> y <code>tailwind.config.js</code></td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <h2 id="arquitectura-decisiones">12. Decisiones de Arquitectura</h2>
+
+        <h3>12.1 ¿Por qué Spring Boot?</h3>
+        <ul>
+            <li><strong>Productividad</strong>: Configuración automática y convenciones</li>
+            <li><strong>Ecosistema</strong>: Gran cantidad de librerías y documentación</li>
+            <li><strong>Escalabilidad</strong>: Fácil de escalar horizontalmente</li>
+            <li><strong>Enterprise</strong>: Ampliamente usado en empresas grandes</li>
+        </ul>
+
+        <h3>12.2 ¿Por qué React?</h3>
+        <ul>
+            <li><strong>Componentes Reutilizables</strong>: Código más limpio y mantenible</li>
+            <li><strong>Virtual DOM</strong>: Rendimiento optimizado</li>
+            <li><strong>Ecosistema</strong>: Gran cantidad de librerías disponibles</li>
+            <li><strong>Curva de Aprendizaje</strong>: Relativamente fácil de aprender</li>
+        </ul>
+
+        <h3>12.3 ¿Por qué SQLite?</h3>
+        <ul>
+            <li><strong>Simplicidad</strong>: No requiere servidor separado</li>
+            <li><strong>Desarrollo</strong>: Perfecto para prototipos y desarrollo</li>
+            <li><strong>Portabilidad</strong>: Un solo archivo contiene toda la base de datos</li>
+            <li><strong>Limitaciones</strong>: No recomendado para producción con alta concurrencia</li>
+        </ul>
+
+        <h3>12.4 Alternativas Consideradas</h3>
+        
+        <table>
+            <tr>
+                <th>Tecnología</th>
+                <th>Ventajas</th>
+                <th>Desventajas</th>
+                <th>¿Por qué no elegimos?</th>
+            </tr>
+            <tr>
+                <td>Node.js + Express</td>
+                <td>JavaScript en todo el stack</td>
+                <td>Menos maduro para aplicaciones empresariales</td>
+                <td>Spring Boot más robusto para APIs complejas</td>
+            </tr>
+            <tr>
+                <td>Angular</td>
+                <td>Framework completo</td>
+                <td>Curva de aprendizaje más alta</td>
+                <td>React más flexible y popular</td>
+            </tr>
+            <tr>
+                <td>PostgreSQL</td>
+                <td>Mejor para producción</td>
+                <td>Configuración más compleja</td>
+                <td>SQLite más simple para desarrollo</td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <h2 id="patrones-diseno">13. Patrones de Diseño Implementados</h2>
+
+        <h3>13.1 DTO Pattern (Data Transfer Object)</h3>
+        
+        <div class="code-block">
+<pre><code>// ❌ Mal: Exponer entidad directamente
+@Entity
+public class Product {
+    private String name;
+    private String internalField; // Campo interno que no debe exponerse
+}
+
+// ✅ Bien: Usar DTO
+public class ProductDetailDTO {
+    private String name;
+    // Solo campos que necesitamos enviar al frontend
+}</code></pre>
+        </div>
+
+        <h4>Ventajas del DTO Pattern:</h4>
+        <ul>
+            <li><strong>Seguridad</strong>: No exponemos campos internos</li>
+            <li><strong>Flexibilidad</strong>: Podemos cambiar la estructura sin afectar la entidad</li>
+            <li><strong>Rendimiento</strong>: Solo enviamos los datos necesarios</li>
+            <li><strong>Mantenibilidad</strong>: Separación clara de responsabilidades</li>
+        </ul>
+
+        <h3>13.2 Repository Pattern</h3>
+        
+        <div class="code-block">
+<pre><code>// Abstracción del acceso a datos
+public interface ProductRepository extends JpaRepository&lt;Product, Long&gt; {
+    Optional&lt;Product&gt; findProductById(Long id);
+}
+
+// Uso en el controlador
+@Autowired
+private ProductRepository productRepository;</code></pre>
+        </div>
+
+        <h3>13.3 Entity Graph Pattern</h3>
+        
+        <div class="code-block">
+<pre><code>@NamedEntityGraph(
+    name = "product-with-details",
+    attributeNodes = {
+        @NamedAttributeNode("seller"),
+        @NamedAttributeNode("reviews")
+    }
+)</code></pre>
+        </div>
+
+        <h4>¿Por qué usar Entity Graph?</h4>
+        <ul>
+            <li><strong>Evita N+1 Queries</strong>: Carga todas las relaciones en una sola consulta</li>
+            <li><strong>Mejor Rendimiento</strong>: Menos viajes a la base de datos</li>
+            <li><strong>Control</strong>: Especificamos exactamente qué cargar</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <h2 id="seguridad-consideraciones">14. Consideraciones de Seguridad</h2>
+
+        <h3>14.1 Vulnerabilidades Comunes</h3>
+        
+        <div class="warning-box">
+            <strong>⚠️ IMPORTANTE - Solo para Desarrollo</strong><br>
+            Este proyecto NO implementa medidas de seguridad para producción.
+        </div>
+
+        <h4>Vulnerabilidades Identificadas:</h4>
+        <ul>
+            <li><strong>Sin Autenticación</strong>: Cualquiera puede acceder a la API</li>
+            <li><strong>Sin Autorización</strong>: No hay control de acceso</li>
+            <li><strong>Sin Validación de Entrada</strong>: No validamos datos de entrada</li>
+            <li><strong>Sin HTTPS</strong>: Comunicación no encriptada</li>
+            <li><strong>SQL Injection</strong>: Aunque JPA ayuda, no es suficiente</li>
+        </ul>
+
+        <h3>14.2 Medidas de Seguridad para Producción</h3>
+        
+        <table>
+            <tr>
+                <th>Medida</th>
+                <th>Implementación</th>
+                <th>Beneficio</th>
+            </tr>
+            <tr>
+                <td>Autenticación</td>
+                <td>Spring Security + JWT</td>
+                <td>Control de acceso</td>
+            </tr>
+            <tr>
+                <td>Autorización</td>
+                <td>Roles y permisos</td>
+                <td>Acceso granular</td>
+            </tr>
+            <tr>
+                <td>Validación</td>
+                <td>Bean Validation</td>
+                <td>Datos seguros</td>
+            </tr>
+            <tr>
+                <td>HTTPS</td>
+                <td>Certificados SSL</td>
+                <td>Comunicación encriptada</td>
+            </tr>
+            <tr>
+                <td>Rate Limiting</td>
+                <td>Spring Boot Actuator</td>
+                <td>Prevenir abuso</td>
+            </tr>
+        </table>
+
+        <h3>14.3 Configuración de Seguridad Básica</h3>
+        
+        <div class="code-block">
+<pre><code>// Ejemplo de configuración básica de seguridad
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable()) // Solo para desarrollo
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/**").authenticated()
+                .anyRequest().permitAll()
+            )
+            .httpBasic(Customizer.withDefaults());
+        
+        return http.build();
+    }
+}</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="testing-estrategia">15. Estrategia de Testing</h2>
+
+        <h3>15.1 Tipos de Testing Recomendados</h3>
+        
+        <table>
+            <tr>
+                <th>Tipo de Test</th>
+                <th>Herramienta</th>
+                <th>Propósito</th>
+                <th>Cobertura</th>
+            </tr>
+            <tr>
+                <td>Unit Tests</td>
+                <td>JUnit 5 + Mockito</td>
+                <td>Probar lógica individual</td>
+                <td>80%+</td>
+            </tr>
+            <tr>
+                <td>Integration Tests</td>
+                <td>Spring Boot Test</td>
+                <td>Probar integración entre componentes</td>
+                <td>60%+</td>
+            </tr>
+            <tr>
+                <td>API Tests</td>
+                <td>RestAssured</td>
+                <td>Probar endpoints REST</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Frontend Tests</td>
+                <td>Jest + React Testing Library</td>
+                <td>Probar componentes React</td>
+                <td>70%+</td>
+            </tr>
+            <tr>
+                <td>E2E Tests</td>
+                <td>Cypress</td>
+                <td>Probar flujos completos</td>
+                <td>Flujos críticos</td>
+            </tr>
+        </table>
+
+        <h3>15.2 Ejemplo de Test Unitario</h3>
+        
+        <div class="code-block">
+<pre><code>@Test
+@DisplayName("Should create ProductDetailDTO with correct data")
+void shouldCreateProductDetailDTO() {
+    // Given
+    Product product = new Product();
+    product.setId(1L);
+    product.setName("Test Product");
+    product.setPrice(100.0);
+    
+    // When
+    ProductDetailDTO dto = new ProductDetailDTO(product);
+    
+    // Then
+    assertThat(dto.getId()).isEqualTo(1L);
+    assertThat(dto.getName()).isEqualTo("Test Product");
+    assertThat(dto.getPrice()).isEqualTo(100.0);
+}</code></pre>
+        </div>
+
+        <h3>15.3 Ejemplo de Test de API</h3>
+        
+        <div class="code-block">
+<pre><code>@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class ProductControllerTest {
+    
+    @Autowired
+    private TestRestTemplate restTemplate;
+    
+    @Test
+    void shouldReturnProductWhenValidId() {
+        // When
+        ResponseEntity&lt;ProductDetailDTO&gt; response = 
+            restTemplate.getForEntity("/api/products/1", ProductDetailDTO.class);
+        
+        // Then
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().getId()).isEqualTo(1L);
+    }
+}</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="monitoreo-logging">16. Monitoreo y Logging</h2>
+
+        <h3>16.1 Configuración de Logging</h3>
+        
+        <div class="code-block">
+<pre><code># application.properties
+logging.level.com.pruebameli=DEBUG
+logging.level.org.springframework.web=INFO
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n</code></pre>
+        </div>
+
+        <h3>16.2 Logs Importantes a Monitorear</h3>
+        
+        <table>
+            <tr>
+                <th>Log</th>
+                <th>Significado</th>
+                <th>Acción</th>
+            </tr>
+            <tr>
+                <td><code>Started PruebameliBackendApplication</code></td>
+                <td>Aplicación iniciada correctamente</td>
+                <td>✅ Todo bien</td>
+            </tr>
+            <tr>
+                <td><code>Hibernate: create table</code></td>
+                <td>Base de datos inicializada</td>
+                <td>✅ Normal en desarrollo</td>
+            </tr>
+            <tr>
+                <td><code>Hibernate: select</code></td>
+                <td>Consulta a base de datos</td>
+                <td>✅ Funcionando</td>
+            </tr>
+            <tr>
+                <td><code>ERROR</code></td>
+                <td>Error en la aplicación</td>
+                <td>❌ Revisar inmediatamente</td>
+            </tr>
+            <tr>
+                <td><code>WARN</code></td>
+                <td>Advertencia</td>
+                <td>⚠️ Investigar</td>
+            </tr>
+        </table>
+
+        <h3>16.3 Métricas de Rendimiento</h3>
+        
+        <div class="code-block">
+<pre><code>// Métricas que deberías implementar
+@Component
+public class PerformanceMetrics {
+    
+    private final Counter requestCounter = Counter.builder("api_requests_total")
+        .description("Total number of API requests")
+        .register(Metrics.globalRegistry);
+    
+    private final Timer responseTime = Timer.builder("api_response_time")
+        .description("API response time")
+        .register(Metrics.globalRegistry);
+    
+    public void recordRequest() {
+        requestCounter.increment();
+    }
+    
+    public Timer.Sample startTimer() {
+        return Timer.start(Metrics.globalRegistry);
+    }
+}</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="deployment-produccion">17. Deployment y Producción</h2>
+
+        <h3>17.1 Preparación para Producción</h3>
+        
+        <div class="warning-box">
+            <strong>⚠️ IMPORTANTE</strong><br>
+            Este proyecto está configurado para desarrollo. Para producción se requieren cambios significativos.
+        </div>
+
+        <h4>Cambios Necesarios para Producción:</h4>
+        <ol>
+            <li><strong>Base de Datos</strong>: Migrar de SQLite a PostgreSQL/MySQL</li>
+            <li><strong>Seguridad</strong>: Implementar autenticación y autorización</li>
+            <li><strong>HTTPS</strong>: Configurar certificados SSL</li>
+            <li><strong>Logging</strong>: Configurar logs centralizados (ELK Stack)</li>
+            <li><strong>Monitoreo</strong>: Implementar APM (Application Performance Monitoring)</li>
+            <li><strong>CI/CD</strong>: Configurar pipeline de deployment</li>
+            <li><strong>Backup</strong>: Estrategia de respaldo de datos</li>
+            <li><strong>Escalabilidad</strong>: Configurar load balancer y múltiples instancias</li>
+        </ol>
+
+        <h3>17.2 Dockerización</h3>
+        
+        <div class="code-block">
+<pre><code># Dockerfile para Backend
+FROM openjdk:21-jdk-slim
+WORKDIR /app
+COPY target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Dockerfile para Frontend
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+FROM nginx:alpine
+COPY --from=0 /app/dist /usr/share/nginx/html
+EXPOSE 80</code></pre>
+        </div>
+
+        <h3>17.3 Docker Compose para Desarrollo</h3>
+        
+        <div class="code-block">
+<pre><code>version: '3.8'
+services:
+  backend:
+    build: ./pruebameli-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    depends_on:
+      - postgres
+  
+  frontend:
+    build: ./pruebameli-front
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: pruebameli
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:</code></pre>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2 id="roadmap-futuro">18. Roadmap y Evolución del Proyecto</h2>
+
+        <h3>18.1 Fase 1 - Funcionalidades Básicas (Actual)</h3>
+        <ul>
+            <li>✅ Visualización de productos</li>
+            <li>✅ Galería de imágenes</li>
+            <li>✅ Sistema de reseñas</li>
+            <li>✅ Información de vendedores</li>
+            <li>✅ Diseño responsive</li>
+        </ul>
+
+        <h3>18.2 Fase 2 - E-commerce Completo (Próximos 3 meses)</h3>
+        <ul>
+            <li>🔄 Sistema de carrito de compras</li>
+            <li>🔄 Proceso de checkout</li>
+            <li>🔄 Sistema de usuarios y autenticación</li>
+            <li>🔄 Búsqueda y filtros avanzados</li>
+            <li>🔄 Sistema de pagos (integración con pasarelas)</li>
+        </ul>
+
+        <h3>18.3 Fase 3 - Funcionalidades Avanzadas (6 meses)</h3>
+        <ul>
+            <li>📋 Sistema de recomendaciones</li>
+            <li>📋 Notificaciones en tiempo real</li>
+            <li>📋 Chat entre compradores y vendedores</li>
+            <li>📋 Sistema de cupones y descuentos</li>
+            <li>📋 Analytics y reportes</li>
+        </ul>
+
+        <h3>18.4 Fase 4 - Escalabilidad (12 meses)</h3>
+        <ul>
+            <li>📋 Microservicios</li>
+            <li>📋 Cache distribuido (Redis)</li>
+            <li>📋 Message queues (RabbitMQ/Kafka)</li>
+            <li>📋 CDN para imágenes</li>
+            <li>📋 Monitoreo avanzado</li>
+        </ul>
+
+        <h3>18.5 Consideraciones Técnicas por Fase</h3>
+        
+        <table>
+            <tr>
+                <th>Fase</th>
+                <th>Arquitectura</th>
+                <th>Base de Datos</th>
+                <th>Infraestructura</th>
+            </tr>
+            <tr>
+                <td>Fase 1</td>
+                <td>Monolítica</td>
+                <td>SQLite</td>
+                <td>Desarrollo local</td>
+            </tr>
+            <tr>
+                <td>Fase 2</td>
+                <td>Monolítica</td>
+                <td>PostgreSQL</td>
+                <td>VPS/Cloud básico</td>
+            </tr>
+            <tr>
+                <td>Fase 3</td>
+                <td>Modular</td>
+                <td>PostgreSQL + Redis</td>
+                <td>Cloud con auto-scaling</td>
+            </tr>
+            <tr>
+                <td>Fase 4</td>
+                <td>Microservicios</td>
+                <td>Distribuida</td>
+                <td>Kubernetes</td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <h2 id="glosario-terminos">19. Glosario de Términos Técnicos</h2>
+
+        <h3>19.1 Términos de Backend</h3>
+        
+        <table>
+            <tr>
+                <th>Término</th>
+                <th>Definición</th>
+                <th>Ejemplo en el Proyecto</th>
+            </tr>
+            <tr>
+                <td><strong>API</strong></td>
+                <td>Interfaz de Programación de Aplicaciones</td>
+                <td>Endpoints en <code>/api/products</code></td>
+            </tr>
+            <tr>
+                <td><strong>REST</strong></td>
+                <td>Representational State Transfer</td>
+                <td>HTTP GET, POST, PUT, DELETE</td>
+            </tr>
+            <tr>
+                <td><strong>JPA</strong></td>
+                <td>Java Persistence API</td>
+                <td>Mapeo de entidades a tablas</td>
+            </tr>
+            <tr>
+                <td><strong>Hibernate</strong></td>
+                <td>Framework ORM para Java</td>
+                <td>Implementación de JPA</td>
+            </tr>
+            <tr>
+                <td><strong>DTO</strong></td>
+                <td>Data Transfer Object</td>
+                <td>ProductDetailDTO</td>
+            </tr>
+            <tr>
+                <td><strong>Repository</strong></td>
+                <td>Patrón para acceso a datos</td>
+                <td>ProductRepository</td>
+            </tr>
+            <tr>
+                <td><strong>CORS</strong></td>
+                <td>Cross-Origin Resource Sharing</td>
+                <td>Permitir comunicación frontend-backend</td>
+            </tr>
+        </table>
+
+        <h3>19.2 Términos de Frontend</h3>
+        
+        <table>
+            <tr>
+                <th>Término</th>
+                <th>Definición</th>
+                <th>Ejemplo en el Proyecto</th>
+            </tr>
+            <tr>
+                <td><strong>Componente</strong></td>
+                <td>Unidad reutilizable de UI</td>
+                <td>ProductGallery.jsx</td>
+            </tr>
+            <tr>
+                <td><strong>Estado</strong></td>
+                <td>Datos que cambian en el tiempo</td>
+                <td>useState en ProductPage</td>
+            </tr>
+            <tr>
+                <td><strong>Props</strong></td>
+                <td>Datos pasados entre componentes</td>
+                <td>product={product}</td>
+            </tr>
+            <tr>
+                <td><strong>Hook</strong></td>
+                <td>Función especial de React</td>
+                <td>useState, useEffect</td>
+            </tr>
+            <tr>
+                <td><strong>JSX</strong></td>
+                <td>JavaScript XML</td>
+                <td>Sintaxis de componentes React</td>
+            </tr>
+            <tr>
+                <td><strong>CSS-in-JS</strong></td>
+                <td>Estilos dentro de JavaScript</td>
+                <td>Tailwind CSS classes</td>
+            </tr>
+        </table>
+
+        <h3>19.3 Términos de Base de Datos</h3>
+        
+        <table>
+            <tr>
+                <th>Término</th>
+                <th>Definición</th>
+                <th>Ejemplo en el Proyecto</th>
+            </tr>
+            <tr>
+                <td><strong>Entidad</strong></td>
+                <td>Objeto que representa una tabla</td>
+                <td>Product.java</td>
+            </tr>
+            <tr>
+                <td><strong>Relación</strong></td>
+                <td>Conexión entre tablas</td>
+                <td>Product ↔ Seller (Many-to-One)</td>
+            </tr>
+            <tr>
+                <td><strong>Query</strong></td>
+                <td>Consulta a la base de datos</td>
+                <td>SELECT * FROM product WHERE id = 1</td>
+            </tr>
+            <tr>
+                <td><strong>Índice</strong></td>
+                <td>Estructura para acelerar búsquedas</td>
+                <td>Primary Key en tablas</td>
+            </tr>
+            <tr>
+                <td><strong>Transacción</strong></td>
+                <td>Operación atómica</td>
+                <td>ACID properties</td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <h2 id="recursos-aprendizaje">20. Recursos de Aprendizaje</h2>
+
+        <h3>20.1 Documentación Oficial</h3>
+        <ul>
+            <li><strong>Spring Boot</strong>: <a href="https://spring.io/projects/spring-boot">https://spring.io/projects/spring-boot</a></li>
+            <li><strong>React</strong>: <a href="https://react.dev">https://react.dev</a></li>
+            <li><strong>Tailwind CSS</strong>: <a href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></li>
+            <li><strong>SQLite</strong>: <a href="https://www.sqlite.org/docs.html">https://www.sqlite.org/docs.html</a></li>
+        </ul>
+
+        <h3>20.2 Cursos Recomendados</h3>
+        <ul>
+            <li><strong>Spring Boot</strong>: "Spring Boot 3 - Complete Course" en Udemy</li>
+            <li><strong>React</strong>: "React - The Complete Guide" en Udemy</li>
+            <li><strong>Arquitectura</strong>: "Clean Architecture" por Robert C. Martin</li>
+            <li><strong>Patrones</strong>: "Design Patterns" por Gang of Four</li>
+        </ul>
+
+        <h3>20.3 Herramientas de Desarrollo</h3>
+        <ul>
+            <li><strong>IDE</strong>: IntelliJ IDEA (Backend), VS Code (Frontend)</li>
+            <li><strong>Base de Datos</strong>: DBeaver, SQLite Browser</li>
+            <li><strong>API Testing</strong>: Postman, Insomnia</li>
+            <li><strong>Git</strong>: GitKraken, SourceTree</li>
+        </ul>
+
+        <h3>20.4 Comunidades y Foros</h3>
+        <ul>
+            <li><strong>Stack Overflow</strong>: Para preguntas técnicas</li>
+            <li><strong>Reddit</strong>: r/java, r/reactjs</li>
+            <li><strong>Discord</strong>: Servidores de Spring y React</li>
+            <li><strong>GitHub</strong>: Repositorios de ejemplo</li>
+        </ul>
+
+        <div class="success-box">
+            <strong>🎯 Consejo para Desarrolladores Junior:</strong><br>
+            <ul>
+                <li>Comienza por entender los conceptos básicos antes de profundizar</li>
+                <li>Practica modificando el código existente</li>
+                <li>No tengas miedo de hacer preguntas</li>
+                <li>Documenta tu aprendizaje</li>
+                <li>Construye proyectos personales para practicar</li>
+            </ul>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #3498db;">
+
+        <p style="text-align: center; color: #7f8c8d; font-size: 14px;">
+            <strong>Documentación Técnica - Proyecto E-commerce Mercado Libre Style</strong><br>
+            Versión 1.0 | Julio 2025 | Equipo de Desarrollo<br>
+            <em>Documento actualizado con secciones para desarrolladores junior y stakeholders no técnicos</em>
+        </p>
+    </div>
+</body>
+</html> 

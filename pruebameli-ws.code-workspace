@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "pruebameli-front"
+		},
+		{
+			"path": "pruebameli-backend/pruebameli-backend"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}

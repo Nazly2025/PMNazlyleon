@@ -1,0 +1,16 @@
+com\pruebameli\pruebameli_backend\dto\ProductDetailDTO$1.class
+com\pruebameli\pruebameli_backend\model\Seller.class
+com\pruebameli\pruebameli_backend\dto\ProductDetailDTO.class
+com\pruebameli\pruebameli_backend\conf\OpenApiConfig.class
+com\pruebameli\pruebameli_backend\conf\WebConfig.class
+com\pruebameli\pruebameli_backend\dto\ReviewDTO.class
+com\pruebameli\pruebameli_backend\repository\SellerRepository.class
+com\pruebameli\pruebameli_backend\repository\ReviewRepository.class
+com\pruebameli\pruebameli_backend\dto\SellerDTO$1.class
+com\pruebameli\pruebameli_backend\dto\SellerDTO.class
+com\pruebameli\pruebameli_backend\repository\ProductRepository.class
+com\pruebameli\pruebameli_backend\model\Product.class
+com\pruebameli\pruebameli_backend\dto\ProductFeatureDTO.class
+com\pruebameli\pruebameli_backend\controller\ProductController.class
+com\pruebameli\pruebameli_backend\model\Review.class
+com\pruebameli\pruebameli_backend\PruebameliBackendApplication.class

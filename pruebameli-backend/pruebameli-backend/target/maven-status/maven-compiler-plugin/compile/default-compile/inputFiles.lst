@@ -1,0 +1,14 @@
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\conf\OpenApiConfig.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\conf\WebConfig.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\controller\ProductController.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\dto\ProductDetailDTO.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\dto\ProductFeatureDTO.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\dto\ReviewDTO.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\dto\SellerDTO.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\model\Product.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\model\Review.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\model\Seller.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\PruebameliBackendApplication.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\repository\ProductRepository.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\repository\ReviewRepository.java
+C:\Users\nazly\OneDrive\Documents\dev\proyectos\pruebameli-backend\pruebameli-backend\src\main\java\com\pruebameli\pruebameli_backend\repository\SellerRepository.java
